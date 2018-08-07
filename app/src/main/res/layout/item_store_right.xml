@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="6dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/proImg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/proName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/proImg"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/proImg"
+            android:text="name"
+            android:textColor="#000000"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/proGuige"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/proName"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/proName"
+            android:text="120ml/支"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/proPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/proImg"
+            android:text="￥ 0"
+            android:textColor="#f00"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/proCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/proPrice"
+            android:text="x 1"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/jbdkDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/proImg"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/proImg"
+            android:text="金币最多抵扣0元"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/proImg"
+            android:background="@color/colorLightGray"/>
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

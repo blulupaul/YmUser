@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#20e5e5e5"
+              android:id="@+id/rootLeft"
+              android:orientation="horizontal">
+
+    <View
+        android:id="@+id/indicator"
+        android:layout_width="2dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center_vertical"
+        android:visibility="invisible"
+        android:background="@color/colorMainTheme"/>
+
+    <TextView
+        android:id="@+id/storeLeftText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="dddddd"
+        android:textColor="#666666"
+        android:textSize="13sp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mars.user.widget.MyScrollView
+                android:id="@+id/sl_homeScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:indicator_drawable_selected="@mipmap/white_point"
+                            app:indicator_drawable_unselected="@mipmap/white_grey"
+                            app:indicator_height="8dp"
+                            app:indicator_margin="3dp"
+                            app:indicator_width="8dp"/>
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/guangGaowei"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"/>
+
+                    <com.mars.user.widget.MyRecycleView
+                        android:id="@+id/rv_homeList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="8dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#EBEBEB"
+                        android:layout_marginTop="40px"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="30px"
+                        android:layout_marginEnd="39px"
+                        android:layout_marginStart="39px"
+                        android:layout_marginTop="30px"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/huodong"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/home_kanjia_icon"/>
+
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/yuyue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/home_yuyue_icon"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#EBEBEB"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_homeBeautiful"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="美丽篇"
+                            android:textColor="@color/home_fragment_text_color_selector"
+                            android:textSize="14sp"/>
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/grayDADADA"/>
+
+                        <TextView
+                            android:id="@+id/tv_homeHealthy"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="健康篇"
+                            android:textColor="@color/home_fragment_text_color_selector"
+                            android:textSize="14sp"/>
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/grayDADADA"/>
+
+                        <TextView
+                            android:id="@+id/tv_homeLookMore"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="更多>>"
+                            android:textColor="@color/home_fragment_text_color_selector"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <include layout="@layout/split_line"/>
+
+                    <com.mars.user.widget.MyRecycleView
+                        android:id="@+id/rv_homeShowMeiWen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </com.mars.user.widget.MyScrollView>
+
+            <RelativeLayout
+                android:id="@+id/rl_homeShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
+
+                <View
+                    android:id="@+id/bg_windowTop"
+                    android:layout_width="match_parent"
+                    android:alpha="0"
+                    android:layout_height="@dimen/mine_fragment_top_margin"
+                    android:background="@color/colorWhite"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/bg_windowTop"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <View
+                        android:id="@+id/bg_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0"
+                        android:background="@color/colorWhite"/>
+
+                    <TextView
+                        android:id="@+id/locationCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="20dp"
+                        android:text="定位中"
+                        android:textColor="#555555"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_homeAppName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="20dp"
+                        android:text="云猫美业"
+                        android:textColor="#555555"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/signIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:text="签到"
+                        android:textColor="#555555"
+                        android:textSize="13sp"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

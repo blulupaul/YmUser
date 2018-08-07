@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_parentPickerPic"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_pickPic1"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/img_pickPic1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/placeholder"/>
+
+        <ImageView
+            android:id="@+id/img_pickPicDelete1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_pickPic2"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/img_pickPic2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/placeholder"/>
+
+        <ImageView
+            android:id="@+id/img_pickPicDelete2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_pickPic3"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/img_pickPic3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/placeholder"/>
+
+        <ImageView
+            android:id="@+id/img_pickPicDelete3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

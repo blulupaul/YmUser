@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="statusBarColor">#d4d4d4</color>
+
+    <!--gray-->
+    <color name="colorGray">#FF4E575C</color>
+    <color name="colorLightGray">#FFE5E5E5</color>
+    <color name="mineNewTextColor">#FF5C5C5C</color>
+    <color name="colorMainTheme">#FF59DCE0</color>
+
+    <color name="colorWhite">#FFFFFFFF</color>
+
+    <color name="actionBarBgColor">#ffffffff</color>
+    <color name="actionBarTextColor">#FF535353</color>
+    <color name="gray555">#FF555555</color>
+    <color name="gray888">#FF888888</color>
+    <color name="grayDADADA">#DADADA</color>
+</resources>

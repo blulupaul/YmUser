@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="mine_fragment_top_margin">10dp</dimen>
+    <dimen name="login_account_top_margin">20dp</dimen>
+    <dimen name="login_weichat_icon_bottom_margin">20dp</dimen>
+</resources>

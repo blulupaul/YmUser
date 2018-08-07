@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?android:selectableItemBackground"
+    android:layout_height="80dp">
+
+    <ImageView
+        android:id="@+id/img_itemHomeIcon"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/banner_defult"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tv_itemHomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@id/img_itemHomeIcon"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="五大保湿谎言 逐个击破！"
+        android:textColor="#ff555555"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_itemHomeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_itemHomeTitle"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@id/img_itemHomeIcon"
+        android:text="发表时间:2017/02/30"
+        android:textColor="#ff7D7D7D"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/tv_itemHomeRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_itemHomeTitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@id/tv_itemHomeTime"
+        android:text="阅读数:0次"
+        android:textColor="#ff7D7D7D"
+        android:textSize="13sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/grayDADADA"/>
+
+</RelativeLayout>
