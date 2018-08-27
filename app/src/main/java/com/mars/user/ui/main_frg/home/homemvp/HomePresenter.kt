@@ -9,7 +9,7 @@ import com.mars.user.utils.SpUtil
  * Created by gu on 2018/07/19
  * desc: ${desc}
  */
-class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
+class HomePresenter(private val view: HomeContract.View) : HomeContract.Presenter {
 
     private val homeModel = HomeModel
     private val bannerDetailList = ArrayList<String>()
@@ -28,24 +28,24 @@ class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
                     }
                 }, {
                     view.onRefreshDismiss()
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
 
         sendGetGuanggaowei(0)
     }
 
-    override fun sendGetGuanggaowei(type:Int){
+    override fun sendGetGuanggaowei(type: Int) {
         homeModel.sendGetGuanggaowei(SpUtil.getInstance().getInt(USER_ID, 3197), view.getRxLifecycle())
                 .subscribe({
                     view.onRefreshDismiss()
                     if (it.success) {
-                        view.onGetGuanggaoweiSuccess(it,type)
+                        view.onGetGuanggaoweiSuccess(it, type)
                     } else {
                         view.onGetGuangGaoweiFail(it.msg)
                     }
                 }, {
                     view.onRefreshDismiss()
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
     }
 
@@ -58,7 +58,7 @@ class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
                         view.onUpdateLHBFail(it?.msg!!)
                     }
                 }, {
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
     }
 
@@ -71,7 +71,7 @@ class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
                         view.onGetDownMoneyfail(it.msg)
                     }
                 }, {
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
     }
 
@@ -84,7 +84,7 @@ class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
                         view.onGetYmmxListFail(it.msg)
                     }
                 }, {
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
     }
 
@@ -97,7 +97,7 @@ class HomePresenter(val view: HomeContract.View) : HomeContract.Presenter {
                         view.onUpdateNotiCountFail(it.msg)
                     }
                 }, {
-                    view.onServerResError(it)
+                    view.onServerError(it)
                 })
     }
 

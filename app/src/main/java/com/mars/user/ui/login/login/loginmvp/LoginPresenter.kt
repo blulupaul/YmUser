@@ -4,28 +4,28 @@ package com.mars.user.ui.login.login.loginmvp
  * Created by gu on 2018/07/18
  * desc: ${desc}
  */
-class LoginPresenter(var view: LoginContract.View) : LoginContract.Presenter {
+class LoginPresenter(private val mView:LoginContract.View) : LoginContract.Presenter {
 
     private var model = LoginModel
 
     override fun login(phone: String, pwd: String) {
-        view.onLoaddingShow()
-        model.getUserLoginInfo(phone, pwd, view.getRxLiftCycle())
+        mView.onLoaddingShow()
+        model.getUserLoginInfo(phone, pwd, mView.getRxLifecycle())
                 .subscribe({
-                    view.onLoaddingDismiss()
+                    mView.onLoaddingDismiss()
                     if (it.success) {
                         if (it.data[0].usertype == 1) {
-                            view.saveToSp(it)
-                            view.onLoginSuccess(it)
+                            mView.saveToSp(it)
+                            mView.onLoginSuccess(it)
                         } else {
-                            view.onLoginIdentityError(it)
+                            mView.onLoginIdentityError(it)
                         }
                     } else {
-                        view.onLoginFail(it.msg)
+                        mView.onLoginFail(it.msg)
                     }
                 }, {
-                    view.onLoaddingDismiss()
-                    view.onServerResError(it)
+                    mView.onLoaddingDismiss()
+                    mView.onServerError(it)
                 })
     }
 }

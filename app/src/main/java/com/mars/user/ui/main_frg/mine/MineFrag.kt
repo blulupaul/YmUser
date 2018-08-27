@@ -1,10 +1,8 @@
 package com.mars.user.ui.main_frg.mine
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.lesincs.simpleread.base.BaseFrag
 import com.mars.user.R
 import com.mars.user.bean.BaseIntResBean
@@ -96,14 +94,6 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
 
     override fun onUpdateNotiCountFail(msg: String) {
         mQBadgeView?.badgeNumber = 0
-    }
-
-    override fun onServerReqError(t: Throwable) {
-
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(context as Activity)
     }
 
     private var mQBadgeView: QBadgeView? = null

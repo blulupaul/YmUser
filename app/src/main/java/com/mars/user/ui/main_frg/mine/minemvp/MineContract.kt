@@ -1,6 +1,7 @@
 package com.mars.user.ui.main_frg.mine.minemvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
+import com.mars.user.base.view.BaseView
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.ui.login.login.bean.UserLoginBean
 import com.mars.user.ui.main_frg.home.bean.HomeModelEnterBean
@@ -11,15 +12,13 @@ import io.reactivex.Observable
  * desc: ${desc}
  */
 interface MineContract {
-    interface View {
+    interface View :BaseView{
         fun onRefreshStart()
         fun onRefreshDismiss()
         fun onGetMyInfoSuccess(bean: UserLoginBean)
         fun onGetMyInfoFail(msg: String)
         fun onUpdateNotiCountSuccess(bean: BaseIntResBean)
         fun onUpdateNotiCountFail(msg: String)
-        fun onServerReqError(t: Throwable)
-        fun getRxLifecycle(): RxLifecycle
     }
 
     interface Model {

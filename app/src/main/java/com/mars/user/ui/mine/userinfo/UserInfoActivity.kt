@@ -13,9 +13,8 @@ import android.os.Build
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.view.View
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.constant.USER_ID
@@ -173,14 +172,6 @@ class UserInfoActivity : BaseActivity(), MineContract.View, UserInfoContract.Vie
 
     override fun onUpdateNotiCountFail(msg: String) {
 
-    }
-
-    override fun onServerReqError(t: Throwable) {
-        showCenterToast("服务器返回错误：${t.message}")
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(this)
     }
 
     override fun onClick(v: View?) {

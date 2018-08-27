@@ -2,8 +2,9 @@ package com.mars.user.api
 
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
-import com.mars.user.ui.home.ympackage.bean.GetPackageListNewGroupPariidResBean
-import com.mars.user.ui.home.ympackage.bean.GetPackageListNewGroupResBean
+import com.mars.user.ui.home.ympackage.list.bean.GetPackageDetailResBean
+import com.mars.user.ui.home.ympackage.list.bean.GetPackageListNewGroupPariidResBean
+import com.mars.user.ui.home.ympackage.list.bean.GetPackageListNewGroupResBean
 import com.mars.user.ui.login.login.bean.UserLoginBean
 import com.mars.user.ui.main.bean.GetUpdateAppResBean
 import com.mars.user.ui.main_frg.cart.bean.GetMyGwcListResBean
@@ -249,6 +250,10 @@ interface ApiService {
     fun getPackageList_new_group_pariid(@Query("mdid") mdid: Int, @Query("parid") parid: Int): Observable<GetPackageListNewGroupPariidResBean>
 
     /**
-     * 
+     * Get Packgae/GetPackageDetail?yid={yid}&userid={userid}
+     * 获取云猫套餐数据详细信息
      */
+    @GET("Packgae/GetPackageDetail?")
+    fun getPackageDetail(@Query("yid") yid: Int, @Query("userid") userid: Int): Observable<GetPackageDetailResBean>
+
 }

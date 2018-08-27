@@ -7,7 +7,7 @@ import android.os.Message
 import android.view.ViewGroup
 import android.webkit.*
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.constant.BOOLEAN_KEY
 import com.mars.user.constant.STRING_KEY
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper

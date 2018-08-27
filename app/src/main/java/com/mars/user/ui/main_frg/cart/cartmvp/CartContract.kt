@@ -2,6 +2,7 @@ package com.mars.user.ui.main_frg.cart.cartmvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.mars.user.base.view.BaseView
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.ui.main_frg.cart.bean.GetMyGwcListResBean
 import com.mars.user.ui.main_frg.cart.bean.GwcJiaJianReqBean
@@ -13,7 +14,7 @@ import io.reactivex.Observable
  * desc: ${desc}
  */
 interface CartContract {
-    interface View {
+    interface View :BaseView{
         fun onRefreshStart()
         fun onRefreshDismiss()
 
@@ -32,8 +33,6 @@ interface CartContract {
         fun onAddCollectSuccess(bean: BaseNomalResBean)
         fun onAddCollectFail(msg: String)
 
-        fun onServerError(t: Throwable)
-        fun getRxLifecycle(): RxLifecycle
     }
 
     interface Model {

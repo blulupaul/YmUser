@@ -25,7 +25,7 @@ class MinePresenter(var view: MineContract.View) : MineContract.Presenter {
                     }
                 }, {
                     view.onRefreshDismiss()
-                    view.onServerReqError(it)
+                    view.onServerError(it)
                 })
     }
 
@@ -41,7 +41,7 @@ class MinePresenter(var view: MineContract.View) : MineContract.Presenter {
                         }
                     }, {
                         view.onRefreshDismiss()
-                        view.onServerReqError(it)
+                        view.onServerError(it)
                     })
         } else {
             view.onRefreshDismiss()

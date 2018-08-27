@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.home.ympackage.YmPackageActivity">
+    tools:context=".ui.home.ympackage.list.YmPackageListActivity">
 
     <com.mars.user.widget.CustomActionBar
         android:layout_width="match_parent"
@@ -14,6 +14,7 @@
         app:custom_title="云猫项目"/>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

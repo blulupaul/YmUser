@@ -1,7 +1,7 @@
 package com.mars.user.ui.login.forgetpwd
 
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 
 /**
  * Created by gu on 2018/8/6

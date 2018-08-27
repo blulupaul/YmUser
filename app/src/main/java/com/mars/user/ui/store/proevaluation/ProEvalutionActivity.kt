@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.constant.LIST_KEY
 import com.mars.user.ui.store.prodetail.adapter.ProPjRvAdapter
 import com.mars.user.ui.store.prodetail.bean.GetProDetailInfoResBean

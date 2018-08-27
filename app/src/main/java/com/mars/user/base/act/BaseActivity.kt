@@ -1,4 +1,4 @@
-package com.mars.user.base
+package com.mars.user.base.act
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -9,21 +9,30 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.Toast
+import cn.nekocode.rxlifecycle.RxLifecycle
 import com.mars.user.app.IApp
+import com.mars.user.base.view.BaseView
 import com.mars.user.utils.T
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity
-
 
 /**
  * Created by gu on 2018/7/17
  * Desc: Activity 基类
  */
 
-abstract class BaseActivity : SwipeBackActivity() {
+abstract class BaseActivity : SwipeBackActivity(), BaseView {
     private var iApp: IApp? = null
     var context: Context? = null
+
+    override fun onServerError(t: Throwable) {
+        showCenterToast("服务器返回错误：${t.message}")
+    }
+
+    override fun getRxLifecycle(): RxLifecycle {
+        return RxLifecycle.bind(this)
+    }
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,8 +82,8 @@ abstract class BaseActivity : SwipeBackActivity() {
         T.showFailAlert(context!!, msg)
     }
 
-    fun showLoading(): QMUITipDialog{
-       return T.showLoading(this)
+    fun showLoading(): QMUITipDialog {
+        return T.showLoading(this)
     }
 
     private var toast: Toast? = null
@@ -90,7 +99,7 @@ abstract class BaseActivity : SwipeBackActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         removeAct(this)
+        super.onDestroy()
     }
 }

@@ -1,4 +1,4 @@
-package com.mars.user.ui.home.ympackage.bean
+package com.mars.user.ui.home.ympackage.list.bean
 
 /**
  * Created by gu on 2018/08/06

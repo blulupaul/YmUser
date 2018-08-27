@@ -1,6 +1,7 @@
 package com.mars.user.ui.main_frg.store.storemvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
+import com.mars.user.base.view.BaseView
 import com.mars.user.ui.main_frg.store.bean.GetProductListByPTypeNewResBean
 import com.mars.user.ui.main_frg.store.bean.GetPtypeListResBean
 import io.reactivex.Observable
@@ -10,7 +11,7 @@ import io.reactivex.Observable
  * desc: ${desc}
  */
 interface StoreContract {
-    interface View {
+    interface View :BaseView{
         fun onRefreshStart()
         fun onRefreshFinish()
         fun onLoadMoreFinish()
@@ -20,10 +21,6 @@ interface StoreContract {
 
         fun onGetProListByPTypeNewSuccess(bean: GetProductListByPTypeNewResBean)
         fun onGetProListByPTypeNewFail(msg: String)
-
-        fun onServerError(t: Throwable)
-
-        fun getRxLifecycle(): RxLifecycle
     }
 
     interface Model {

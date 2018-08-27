@@ -1,16 +1,15 @@
 package com.mars.user.ui.main_frg.home
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.WindowManager
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.lesincs.simpleread.base.BaseFrag
 import com.mars.user.R
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
+import com.mars.user.ui.home.ympackage.list.YmPackageListActivity
 import com.mars.user.ui.main_frg.home.adapter.HomeModuleEnterRvAdapter
 import com.mars.user.ui.main_frg.home.adapter.MeiWenRvAdapter
 import com.mars.user.ui.main_frg.home.bean.GetDownMoneyResBean
@@ -107,14 +106,6 @@ class HomeFrag : BaseFrag(), HomeContract.View {
 
     }
 
-    override fun onServerResError(t: Throwable) {
-
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(context as Activity)
-    }
-
     companion object {
         fun newInstence(): HomeFrag {
             val homeFrag = HomeFrag()
@@ -209,7 +200,10 @@ class HomeFrag : BaseFrag(), HomeContract.View {
         }
 
         homeModuleEnterRvAdapter.setOnItemClickListener { _, _, position ->
-            showCenterToast("$position")
+            when (position) {
+                0 -> YmPackageListActivity.startSelf(context!!)
+                else -> showCenterToast("$position")
+            }
         }
 
         // 美文列表点击

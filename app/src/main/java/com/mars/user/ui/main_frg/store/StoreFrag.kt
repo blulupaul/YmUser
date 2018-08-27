@@ -1,10 +1,8 @@
 package com.mars.user.ui.main_frg.store
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.lesincs.simpleread.base.BaseFrag
 import com.mars.user.R
 import com.mars.user.constant.MD_ID
@@ -77,14 +75,6 @@ class StoreFrag : BaseFrag(), StoreContract.View {
         } else {
             page -= 1
         }
-    }
-
-    override fun onServerError(t: Throwable) {
-
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(context as Activity)
     }
 
     private val leftAdapter = StoreLeftAdapter()

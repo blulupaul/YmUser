@@ -55,7 +55,9 @@
         </activity>
         <activity android:name=".ui.store.proevaluation.ProEvalutionActivity">
         </activity>
-        <activity android:name=".ui.home.ympackage.YmPackageActivity">
+        <activity android:name=".ui.home.ympackage.list.YmPackageListActivity">
+        </activity>
+        <activity android:name=".ui.home.ympackage.details.PackageDetailActivity">
         </activity>
     </application>
 

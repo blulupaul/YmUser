@@ -1,12 +1,10 @@
 package com.mars.user.ui.login.login
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.text.TextUtils
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.constant.*
 import com.mars.user.ui.login.forgetpwd.ForgetPwdActivity
 import com.mars.user.ui.login.login.bean.UserLoginBean
@@ -24,9 +22,8 @@ import kotlinx.android.synthetic.main.activity_login.*
  */
 
 class LoginActivity : BaseActivity(), LoginContract.View {
-
     private var qmuiTipDialog: QMUITipDialog? = null
-    private var mPresenter: LoginPresenter? = null
+    private var presenter: LoginPresenter? = null
 
     override fun onLoginSuccess(bean: UserLoginBean) {
         showSuccessAlert(bean.msg).setOnDismissListener {
@@ -44,20 +41,12 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         showFailAlert(msg)
     }
 
-    override fun onServerResError(t: Throwable) {
-        showFailAlert(t.message!!)
-    }
-
     override fun onLoaddingShow() {
         qmuiTipDialog?.show()
     }
 
     override fun onLoaddingDismiss() {
         qmuiTipDialog?.dismiss()
-    }
-
-    override fun getRxLiftCycle(): RxLifecycle {
-        return RxLifecycle.bind(context!! as Activity)
     }
 
     override fun saveToSp(bean: UserLoginBean) {
@@ -102,7 +91,7 @@ class LoginActivity : BaseActivity(), LoginContract.View {
         /*hide statusBar and actionBar*/
         QMUIStatusBarHelper.translucent(this)
         swipeBackLayout.setEnableGesture(false)
-        mPresenter = LoginPresenter(this)
+        presenter = LoginPresenter(this)
         qmuiTipDialog = QMUITipDialog.Builder(context!!)
                 .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
                 .setTipWord("正在登录")
@@ -132,7 +121,7 @@ class LoginActivity : BaseActivity(), LoginContract.View {
                 return@setOnClickListener
             }
 
-            mPresenter?.login(phone, pwd)
+            presenter?.login(phone, pwd)
         }
 
         /*注册*/

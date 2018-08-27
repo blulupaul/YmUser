@@ -1,7 +1,7 @@
 package com.mars.user.ui.store.prodetail.mvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
-import com.mars.user.base.mvpview.MvpView
+import com.mars.user.base.view.BaseView
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.ui.store.prodetail.bean.GetProDetailInfoResBean
 import io.reactivex.Observable
@@ -11,7 +11,7 @@ import io.reactivex.Observable
  * desc: ${desc}
  */
 interface ProDetailContract {
-    interface View : MvpView {
+    interface View : BaseView {
         fun onRefreshStart()
         fun onRefreshDismiss()
 

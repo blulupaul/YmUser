@@ -7,9 +7,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebSettings
-import cn.nekocode.rxlifecycle.RxLifecycle
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.constant.CAN_BUY
 import com.mars.user.constant.P_ID
@@ -102,14 +101,6 @@ class ProDetailActivity : BaseActivity(), ProDetailContract.View {
 
     override fun onAddGwcFail(msg: String) {
         showFailAlert(msg)
-    }
-
-    override fun onServerError(t: Throwable) {
-        showCenterToast("服务器返回错误：${t.message}")
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(this)
     }
 
     private val presenter = ProDetailPresenter(this, this)

@@ -3,7 +3,7 @@ package com.mars.user.ui.universal.picshow
 import android.content.Context
 import android.content.Intent
 import com.mars.user.R
-import com.mars.user.base.BaseActivity
+import com.mars.user.base.act.BaseActivity
 import com.mars.user.constant.URL_LIST
 import com.mars.user.ui.main_frg.home.GlideImageLoader
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper

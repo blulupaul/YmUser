@@ -1,6 +1,7 @@
 package com.mars.user.ui.main_frg.home.homemvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
+import com.mars.user.base.view.BaseView
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.ui.main_frg.home.bean.*
@@ -12,7 +13,7 @@ import io.reactivex.Observable
  */
 interface HomeContract {
 
-    interface View {
+    interface View : BaseView {
         fun onRefreshStart()
         fun onRefreshDismiss()
 
@@ -25,11 +26,12 @@ interface HomeContract {
         fun onGetDownMoneySuccess(bean: GetDownMoneyResBean)
         fun onGetDownMoneyfail(msg: String)
 
-        fun onGetGuanggaoweiSuccess(bean: GetGangGaoweiResBean,type:Int)
+        fun onGetGuanggaoweiSuccess(bean: GetGangGaoweiResBean, type: Int)
         fun onGetGuangGaoweiFail(msg: String)
 
         //        fun onGetStoreBannerSuccess(bean: GetStoreBannerResBean)
         fun updateBanner(bannerImgList: List<String>)
+
         fun onGetStoreBannerFail(msg: String)
 
         fun onUpdateLHBSuccess(bean: BaseNomalResBean)
@@ -37,10 +39,6 @@ interface HomeContract {
 
         fun onGett_waddressSuccess(bean: Gett_waddressResBean)
         fun onGett_waddressFail(msg: String)
-
-        fun onServerResError(t: Throwable)
-
-        fun getRxLifecycle(): RxLifecycle
     }
 
     interface Model {
@@ -50,7 +48,7 @@ interface HomeContract {
         fun sendGett_waddress(rxLifecycle: RxLifecycle): Observable<Gett_waddressResBean>
         fun updateLHB(userid: Int, rxLifecycle: RxLifecycle): Observable<BaseNomalResBean>
         fun sendGetStoreBanner(userid: Int, rxLifecycle: RxLifecycle): Observable<GetStoreBannerResBean>
-        fun sendGetUpdateNotiCount(userid: Int, typeId: Int,rxLifecycle: RxLifecycle): Observable<BaseIntResBean>
+        fun sendGetUpdateNotiCount(userid: Int, typeId: Int, rxLifecycle: RxLifecycle): Observable<BaseIntResBean>
 
         fun getBannerImgList(bean: GetStoreBannerResBean): List<String>
 
@@ -59,13 +57,14 @@ interface HomeContract {
         fun homeModuleEnterBeanList(count: Int): List<HomeModelEnterBean>
     }
 
-    interface Presenter {
+    interface Presenter  {
         fun onStart()
         fun onRefresh()
         /**
          * type： 0 展示图片，1 完成跳转
          */
-        fun sendGetGuanggaowei(type:Int)
+        fun sendGetGuanggaowei(type: Int)
+
         fun onUpdateLHB()
         fun sendGetYmmxList(typeId: Int, page: Int, limit: Int)
         fun sendGetDownMoney()

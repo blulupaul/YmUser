@@ -1,10 +1,8 @@
 package com.mars.user.ui.main_frg.cart
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import cn.nekocode.rxlifecycle.RxLifecycle
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.lesincs.simpleread.base.BaseFrag
 import com.mars.user.R
@@ -113,14 +111,6 @@ class CartFrag : BaseFrag(), CartContract.View {
 
     override fun onAddCollectFail(msg: String) {
         T.showFailAlert(context!!, msg)
-    }
-
-    override fun onServerError(t: Throwable) {
-        T.showFailAlert(context!!, t.message!!)
-    }
-
-    override fun getRxLifecycle(): RxLifecycle {
-        return RxLifecycle.bind(context as Activity)
     }
 
     private val presenter = CartPresenter(this)

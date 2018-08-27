@@ -1,6 +1,7 @@
 package com.mars.user.ui.login.login.loginmvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
+import com.mars.user.base.view.BaseView
 import com.mars.user.ui.login.login.bean.UserLoginBean
 import io.reactivex.Observable
 
@@ -11,15 +12,13 @@ import io.reactivex.Observable
  */
 interface LoginContract {
 
-    interface View {
+    interface View :BaseView{
         fun onLoginSuccess(bean: UserLoginBean)
         fun onLoginIdentityError(bean: UserLoginBean)
         fun onLoginFail(msg:String)
-        fun onServerResError(t: Throwable)
         fun onLoaddingShow()
         fun onLoaddingDismiss()
         fun saveToSp(bean: UserLoginBean)
-        fun getRxLiftCycle(): RxLifecycle
     }
 
     interface Model {
