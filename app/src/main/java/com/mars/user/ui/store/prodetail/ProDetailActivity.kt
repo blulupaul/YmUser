@@ -22,6 +22,7 @@ import com.mars.user.utils.getUserid
 import com.mars.user.utils.glideLoad
 import com.mars.user.utils.selfAdaptionImageView
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog
+import com.scwang.smartrefresh.layout.footer.FalsifyFooter
 import kotlinx.android.synthetic.main.activity_pro_detail.*
 import org.greenrobot.eventbus.EventBus
 
@@ -194,8 +195,12 @@ class ProDetailActivity : BaseActivity(), ProDetailContract.View {
             presenter.addGwc(pid!!, 1, userid!!)
         }
 
-        refreshLayout.setOnRefreshListener {
-            presenter.onStart(userid!!, pid!!)
+        refreshLayout.apply {
+            isEnableLoadMore = false
+            setRefreshFooter(FalsifyFooter(this@ProDetailActivity))
+            setOnRefreshListener {
+                presenter.onStart(userid!!, pid!!)
+            }
         }
 
         buyNow.setOnClickListener {

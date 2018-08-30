@@ -13,8 +13,6 @@ import com.mars.user.ui.home.ympackage.list.ympackagemvp.YmPackageListContract
 import com.mars.user.ui.home.ympackage.list.ympackagemvp.YmPackageListPresenter
 import com.mars.user.utils.SpUtil
 import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.footer.ClassicsFooter
-import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 import kotlinx.android.synthetic.main.activity_ym_package.*
 
@@ -89,9 +87,6 @@ class YmPackageListActivity : BaseActivity(), YmPackageListContract.View {
     }
 
     private fun configRvAndRefresh() {
-        refreshLayout.setRefreshHeader(ClassicsHeader(this))
-        refreshLayout.setRefreshFooter(ClassicsFooter(this))
-
         ymPackageList.layoutManager = GridLayoutManager(this, 2)
         ymPackageList.adapter = adapter
     }

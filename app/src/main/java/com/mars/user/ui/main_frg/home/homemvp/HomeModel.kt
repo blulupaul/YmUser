@@ -16,12 +16,12 @@ import io.reactivex.schedulers.Schedulers
  * desc: ${desc}
  */
 object HomeModel : HomeContract.Model {
-    override fun sendGetYmmxList(typeId: Int, page: Int, limit: Int, rxLifecycle: RxLifecycle): Observable<GetYmmxListResBean> {
-        return RetrofitAPIManager.getProvideClientApi().getYmmxList(typeId, page, limit)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .compose(rxLifecycle.disposeObservableWhen(LifecycleEvent.DESTROY))
-    }
+//    override fun sendGetYmmxList(typeId: Int, page: Int, limit: Int, rxLifecycle: RxLifecycle): Observable<GetYmmxListResBean> {
+//        return RetrofitAPIManager.getProvideClientApi().getYmmxList(typeId, page, limit)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .compose(rxLifecycle.disposeObservableWhen(LifecycleEvent.DESTROY))
+//    }
 
     override fun sendGetDownMoney(userid: Int, mdid: Int, rxLifecycle: RxLifecycle): Observable<GetDownMoneyResBean> {
         return RetrofitAPIManager.getProvideClientApi().getDownMoney(userid, mdid)

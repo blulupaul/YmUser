@@ -1,6 +1,7 @@
 package com.lesincs.simpleread.base
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.Gravity
@@ -24,6 +25,10 @@ abstract class BaseFrag : Fragment(), BaseView {
 
     override fun getRxLifecycle(): RxLifecycle {
         return RxLifecycle.bind(context as Activity)
+    }
+
+    override fun getRContext(): Context {
+        return context!!
     }
 
     /*免去每次新建frag都要加载view*/

@@ -18,7 +18,6 @@ import com.mars.user.utils.getUserid
 import com.mars.user.utils.isLogin
 import com.qmuiteam.qmui.widget.QMUIEmptyView
 import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.footer.FalsifyFooter
 import com.scwang.smartrefresh.layout.header.FalsifyHeader
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
@@ -172,10 +171,5 @@ class StoreFrag : BaseFrag(), StoreContract.View {
             setRefreshHeader(FalsifyHeader(context!!))
             setRefreshFooter(FalsifyFooter(context!!))
         }
-
-        refreshRight.apply {
-            setRefreshFooter(ClassicsFooter(context!!))
-        }
-
     }
 }

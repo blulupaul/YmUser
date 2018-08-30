@@ -16,7 +16,6 @@ import com.mars.user.ui.main_frg.cart.cartmvp.CartContract
 import com.mars.user.ui.main_frg.cart.cartmvp.CartPresenter
 import com.mars.user.utils.*
 import com.scwang.smartrefresh.layout.api.RefreshLayout
-import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 import kotlinx.android.synthetic.main.frag_cart.*
 import org.greenrobot.eventbus.EventBus
@@ -135,7 +134,6 @@ class CartFrag : BaseFrag(), CartContract.View {
 
     override fun configViews() {
         configRv()
-        configRefreshLayout()
         initListener()
     }
 
@@ -271,10 +269,5 @@ class CartFrag : BaseFrag(), CartContract.View {
         adapter = CartRvAdapter(context!!)
         cartList.layoutManager = LinearLayoutManager(context!!, LinearLayoutManager.VERTICAL, false)
         cartList.adapter = adapter
-    }
-
-    private fun configRefreshLayout() {
-        refreshLayout.isEnableLoadMore = true
-        refreshLayout.setRefreshFooter(ClassicsFooter(context!!))
     }
 }

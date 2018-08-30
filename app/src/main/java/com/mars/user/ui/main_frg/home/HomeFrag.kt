@@ -9,6 +9,9 @@ import com.lesincs.simpleread.base.BaseFrag
 import com.mars.user.R
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
+import com.mars.user.ui.home.article.ArticleActivity
+import com.mars.user.ui.home.article.mvp.ArticleListContract
+import com.mars.user.ui.home.article.mvp.ArticleListPresenter
 import com.mars.user.ui.home.ympackage.list.YmPackageListActivity
 import com.mars.user.ui.main_frg.home.adapter.HomeModuleEnterRvAdapter
 import com.mars.user.ui.main_frg.home.adapter.MeiWenRvAdapter
@@ -32,7 +35,14 @@ import kotlinx.android.synthetic.main.frag_home.*
  * Created by gu on 2018/07/18
  * desc: 首页Fragment
  */
-class HomeFrag : BaseFrag(), HomeContract.View {
+class HomeFrag : BaseFrag(), HomeContract.View, ArticleListContract.View {
+    override fun onRefreshFinish() {
+
+    }
+
+    override fun onLoadMoreFinish() {
+
+    }
 
     override fun onRefreshStart() {
         refreshLayout.autoRefresh()
@@ -121,6 +131,7 @@ class HomeFrag : BaseFrag(), HomeContract.View {
     val meiWenRvAdapter = MeiWenRvAdapter()
 
     private val presenter = HomePresenter(this)
+    private val meiwenPresenter = ArticleListPresenter(this, 0, 0)
 
     override fun getLayoutId(): Int {
         return R.layout.frag_home
@@ -132,7 +143,7 @@ class HomeFrag : BaseFrag(), HomeContract.View {
         setAdapter()
         initListener()
         presenter.onStart()
-        presenter.sendGetYmmxList(4, 1, 3)
+        meiwenPresenter.sendGetYmmxList(4, 1, 3)
     }
 
     override fun onResume() {
@@ -144,6 +155,7 @@ class HomeFrag : BaseFrag(), HomeContract.View {
      * SmartRefreshLayout 配置
      */
     private fun configRefreshLayout() {
+        refreshLayout.isEnableLoadMore = false
         refreshLayout.setRefreshFooter(FalsifyFooter(context!!))
         refreshLayout.isEnablePureScrollMode = false
     }
@@ -169,17 +181,17 @@ class HomeFrag : BaseFrag(), HomeContract.View {
         tv_homeBeautiful.setOnClickListener {
             isSelected(false)
             it.isSelected = true
-            presenter.sendGetYmmxList(4, 1, 3)
+            meiwenPresenter.sendGetYmmxList(4, 1, 3)
         }
 
         tv_homeHealthy.setOnClickListener {
             isSelected(false)
             it.isSelected = true
-            presenter.sendGetYmmxList(5, 1, 3)
+            meiwenPresenter.sendGetYmmxList(5, 1, 3)
         }
 
         tv_homeLookMore.setOnClickListener {
-
+            ArticleActivity.startSelf(context!!)
         }
 
         sl_homeScroll.setOnScrollListener {

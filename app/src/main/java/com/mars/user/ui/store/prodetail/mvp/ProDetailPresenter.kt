@@ -2,6 +2,8 @@ package com.mars.user.ui.store.prodetail.mvp
 
 import android.content.Context
 import com.mars.user.interfac.OnSheetItemClickListener
+import com.mars.user.ui.store.prodetail.bean.GetProDetailInfoResBean
+import com.mars.user.utils.RObserver
 import com.mars.user.utils.T
 import com.mars.user.utils.showShareAlert
 
@@ -22,18 +24,37 @@ class ProDetailPresenter(val context: Context, val view: ProDetailContract.View)
     }
 
     override fun getProDetailInfo(pid: Int, userid: Int) {
+//        model.getProDetailInfo(pid, userid, view.getRxLifecycle())
+//                .subscribe({
+//                    view.onRefreshDismiss()
+//                    isFirstLoad = false
+//                    if (it.success) {
+//                        view.onGetProDetailInfoSuccess(it)
+//                    } else {
+//                        view.onGetProDetailInfoFail(it.msg)
+//                    }
+//                }, {
+//                    view.onRefreshDismiss()
+//                    view.onServerError(it)
+//                })
+
         model.getProDetailInfo(pid, userid, view.getRxLifecycle())
-                .subscribe({
-                    view.onRefreshDismiss()
-                    isFirstLoad = false
-                    if (it.success) {
-                        view.onGetProDetailInfoSuccess(it)
-                    } else {
-                        view.onGetProDetailInfoFail(it.msg)
+                .subscribe(object :RObserver<GetProDetailInfoResBean>(view.getRContext()){
+                    override fun onRNext(bean: GetProDetailInfoResBean) {
+                        view.onRefreshDismiss()
+                        isFirstLoad = false
+                        if (bean.success) {
+                            view.onGetProDetailInfoSuccess(bean)
+                        } else {
+                            view.onGetProDetailInfoFail(bean.msg)
+                        }
                     }
-                }, {
-                    view.onRefreshDismiss()
-                    view.onServerError(it)
+
+                    override fun onRError(t: Throwable) {
+                        view.onRefreshDismiss()
+                        view.onServerError(t)
+                    }
+
                 })
     }
 

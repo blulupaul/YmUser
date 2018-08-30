@@ -136,6 +136,7 @@ fun glideLoad(context: Context?, url: Any, view: ImageView) {
     GlideApp.with(context!!).load(url).placeholder(R.mipmap.banner_defult).into(view)
 }
 
+
 fun selfAdaptionImageView(context: Context, imgWidth: Int, imgHeight: Int, img: ImageView) {
     val screenWidth = getScreenWidth(context)
     val ratio = imgWidth.toFloat() / imgHeight.toFloat()

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.article.ArticleActivity">
+
+    <com.mars.user.widget.CustomActionBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:custom_title="云猫美学"/>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tabArticle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/stroke_bg_radio_5_shape"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        app:tl_indicator_color="@color/colorMainTheme"
+        app:tl_indicator_corner_radius="5dp"
+        app:tl_indicator_margin_left="2dp"
+        app:tl_indicator_margin_right="2dp"
+        app:tl_indicator_style="BLOCK"
+        app:tl_tab_space_equal="true"
+        app:tl_textSelectColor="@color/colorWhite"
+        app:tl_textUnselectColor="@color/colorMainTheme"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpArticle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

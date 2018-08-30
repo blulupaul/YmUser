@@ -8,9 +8,9 @@ import android.view.View
  */
 abstract class LazyInitFragment : BaseFrag() {
 
-    private var isPrepareView = false /*是够已经加载数据*/
+    private var isPrepareView = false /*是否已经加载数据*/
     private var isVisibleToUser = false /*该fragment当前是否对用户可见*/
-    private var isInitData = false /*是否已经加载过数据*/
+    var isInitData = false /*是否已经加载过数据*/
 
     abstract override fun getLayoutId(): Int
 

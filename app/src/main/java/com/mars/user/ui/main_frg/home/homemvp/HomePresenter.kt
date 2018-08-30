@@ -75,18 +75,18 @@ class HomePresenter(private val view: HomeContract.View) : HomeContract.Presente
                 })
     }
 
-    override fun sendGetYmmxList(typeId: Int, page: Int, limit: Int) {
-        homeModel.sendGetYmmxList(typeId, page, limit, view.getRxLifecycle())
-                .subscribe({
-                    if (it.success) {
-                        view.onGetYmmxListSuccess(it)
-                    } else {
-                        view.onGetYmmxListFail(it.msg)
-                    }
-                }, {
-                    view.onServerError(it)
-                })
-    }
+//    override fun sendGetYmmxList(typeId: Int, page: Int, limit: Int) {
+//        homeModel.sendGetYmmxList(typeId, page, limit, view.getRxLifecycle())
+//                .subscribe({
+//                    if (it.success) {
+//                        view.onGetYmmxListSuccess(it)
+//                    } else {
+//                        view.onGetYmmxListFail(it.msg)
+//                    }
+//                }, {
+//                    view.onServerError(it)
+//                })
+//    }
 
     override fun sendUpdateNotiCount() {
         homeModel.sendGetUpdateNotiCount(SpUtil.getInstance().getInt(USER_ID, 3197), 0, view.getRxLifecycle())

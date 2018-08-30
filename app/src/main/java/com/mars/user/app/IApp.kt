@@ -8,6 +8,7 @@ import com.mars.user.utils.DynamicTimeFormat
 import com.mars.user.utils.SpUtil
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import java.util.*
 
@@ -34,6 +35,9 @@ class IApp : Application() {
                 setLastUpdateTime(Date(System.currentTimeMillis() - deta))
                 setTimeFormat(DynamicTimeFormat("更新于 %s"))
             }
+        }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
+            ClassicsFooter(context)
         }
 
     }

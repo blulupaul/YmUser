@@ -34,6 +34,10 @@ abstract class BaseActivity : SwipeBackActivity(), BaseView {
         return RxLifecycle.bind(this)
     }
 
+    override fun getRContext(): Context {
+        return this
+    }
+
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

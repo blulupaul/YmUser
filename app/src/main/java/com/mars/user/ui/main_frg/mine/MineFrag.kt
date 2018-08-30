@@ -18,7 +18,6 @@ import com.mars.user.utils.glideLoad
 import com.mars.user.utils.isLogin
 import com.scwang.smartrefresh.layout.footer.FalsifyFooter
 import kotlinx.android.synthetic.main.frag_mine.*
-import q.rorbin.badgeview.QBadgeView
 
 /**
  * Created by gu on 2018/07/18
@@ -38,9 +37,9 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
                 }
             }
 
-            R.id.tongzhi -> {
-
-            }
+//            R.id.tongzhi -> {
+//
+//            }
 
             R.id.collect -> {
 
@@ -77,7 +76,7 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
     }
 
     override fun onRefreshDismiss() {
-        refreshLayout.finishRefresh(500)
+        refreshLayout.finishRefresh()
     }
 
     override fun onGetMyInfoSuccess(bean: UserLoginBean) {
@@ -89,14 +88,14 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
     }
 
     override fun onUpdateNotiCountSuccess(bean: BaseIntResBean) {
-        mQBadgeView?.badgeNumber = bean.data
+//        mQBadgeView?.badgeNumber = bean.data
     }
 
     override fun onUpdateNotiCountFail(msg: String) {
-        mQBadgeView?.badgeNumber = 0
+//        mQBadgeView?.badgeNumber = 0
     }
 
-    private var mQBadgeView: QBadgeView? = null
+//    private var mQBadgeView: QBadgeView? = null
     private var presenter = MinePresenter(this)
     private var adapter = MineModuleEnterRvAdapter()
 
@@ -114,7 +113,7 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
     }
 
     override fun configViews() {
-        configQBadgeView()
+//        configQBadgeView()
         configRv()
         configRefreshLayout()
         initListener()
@@ -137,6 +136,7 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
      * SmartRefreshLayout 配置
      */
     private fun configRefreshLayout() {
+        refreshLayout.isEnableLoadMore = false
         refreshLayout.setRefreshFooter(FalsifyFooter(context!!))
         refreshLayout.isEnablePureScrollMode = false
     }
@@ -144,7 +144,7 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
 
     private fun initListener() {
         toLogin.setOnClickListener(this)
-        tongzhi.setOnClickListener(this)
+//        tongzhi.setOnClickListener(this)
 
         collect.setOnClickListener(this)
         qrcode.setOnClickListener(this)
@@ -164,11 +164,14 @@ class MineFrag : BaseFrag(), MineContract.View, View.OnClickListener {
 
     }
 
-    private fun configQBadgeView() {
-        mQBadgeView = QBadgeView(context!!)
-        mQBadgeView?.bindTarget(tongzhi)
-        mQBadgeView?.setGravityOffset(8f, 2f, true)
-    }
+    /**
+     * 配置QBadgeView
+     */
+//    private fun configQBadgeView() {
+//        mQBadgeView = QBadgeView(context!!)
+//        mQBadgeView?.bindTarget(tongzhi)
+//        mQBadgeView?.setGravityOffset(8f, 2f, true)
+//    }
 
     /**
      * 是否登录状态

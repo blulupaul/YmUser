@@ -20,8 +20,8 @@ interface HomeContract {
         fun onUpdateNotiCountSuccess(bean: BaseIntResBean)
         fun onUpdateNotiCountFail(msg: String)
 
-        fun onGetYmmxListSuccess(bean: GetYmmxListResBean)
-        fun onGetYmmxListFail(msg: String)
+//        fun onGetYmmxListSuccess(bean: GetYmmxListResBean)
+//        fun onGetYmmxListFail(msg: String)
 
         fun onGetDownMoneySuccess(bean: GetDownMoneyResBean)
         fun onGetDownMoneyfail(msg: String)
@@ -42,7 +42,7 @@ interface HomeContract {
     }
 
     interface Model {
-        fun sendGetYmmxList(typeId: Int, page: Int, limit: Int, rxLifecycle: RxLifecycle): Observable<GetYmmxListResBean>
+//        fun sendGetYmmxList(typeId: Int, page: Int, limit: Int, rxLifecycle: RxLifecycle): Observable<GetYmmxListResBean>
         fun sendGetDownMoney(userid: Int, mdid: Int, rxLifecycle: RxLifecycle): Observable<GetDownMoneyResBean>
         fun sendGetGuanggaowei(userid: Int, rxLifecycle: RxLifecycle): Observable<GetGangGaoweiResBean>
         fun sendGett_waddress(rxLifecycle: RxLifecycle): Observable<Gett_waddressResBean>
@@ -66,7 +66,7 @@ interface HomeContract {
         fun sendGetGuanggaowei(type: Int)
 
         fun onUpdateLHB()
-        fun sendGetYmmxList(typeId: Int, page: Int, limit: Int)
+//        fun sendGetYmmxList(typeId: Int, page: Int, limit: Int)
         fun sendGetDownMoney()
         fun sendUpdateNotiCount()
         fun getHomeModuleEnterBeanList(count: Int): List<HomeModelEnterBean>
