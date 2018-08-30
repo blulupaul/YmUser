@@ -5,15 +5,15 @@ version = "1.1.5" // QMUI 发布到 bintray 的版本号
 
 //noinspection GroovyMissingReturnStatement
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.1"
     lintOptions {
         abortOnError false
     }
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
 //        vectorDrawables.useSupportLibrary = true // 与 com.android.support:support-vector-drawable 搭配使用,禁掉 Android Studio 自动生成 png 的功能
     }
     buildTypes {

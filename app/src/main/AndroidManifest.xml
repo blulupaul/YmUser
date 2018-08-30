@@ -59,6 +59,8 @@
         </activity>
         <activity android:name=".ui.home.ympackage.details.PackageDetailActivity">
         </activity>
+        <activity android:name=".ui.home.article.ArticleActivity">
+        </activity>
     </application>
 
 </manifest>
