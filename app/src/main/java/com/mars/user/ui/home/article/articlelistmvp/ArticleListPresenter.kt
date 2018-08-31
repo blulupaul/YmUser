@@ -1,4 +1,4 @@
-package com.mars.user.ui.home.article.mvp
+package com.mars.user.ui.home.article.articlelistmvp
 
 import com.mars.user.ui.main_frg.home.bean.GetYmmxListResBean
 import com.mars.user.utils.RObserver

@@ -34,5 +34,10 @@ class Url{
          * 美疗师业绩H5地址
          */
         val MLS_YE_JI_H5_URL = "http://www.yuekee.com.cn/ymmyh5/grade.html?mlsid="
+
+        /**
+         * 美学详情分享地址
+         */
+        val ARTICLE_DETAIL_SHARE_URL = "http://www.yuekee.com.cn/ymmyh5/releaseInfo.html?"
     }
 }

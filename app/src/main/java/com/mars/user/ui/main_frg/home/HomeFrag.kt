@@ -10,8 +10,9 @@ import com.mars.user.R
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
 import com.mars.user.ui.home.article.ArticleActivity
-import com.mars.user.ui.home.article.mvp.ArticleListContract
-import com.mars.user.ui.home.article.mvp.ArticleListPresenter
+import com.mars.user.ui.home.article.ArticleDetailActivity
+import com.mars.user.ui.home.article.articlelistmvp.ArticleListContract
+import com.mars.user.ui.home.article.articlelistmvp.ArticleListPresenter
 import com.mars.user.ui.home.ympackage.list.YmPackageListActivity
 import com.mars.user.ui.main_frg.home.adapter.HomeModuleEnterRvAdapter
 import com.mars.user.ui.main_frg.home.adapter.MeiWenRvAdapter
@@ -221,7 +222,7 @@ class HomeFrag : BaseFrag(), HomeContract.View, ArticleListContract.View {
         // 美文列表点击
         meiWenRvAdapter.setOnItemClickListener { _, _, position ->
             val mid = meiWenRvAdapter.data[position].mid
-            showCenterToast("$mid")
+            ArticleDetailActivity.startSelf(context!!, mid)
         }
 
         banner.setOnBannerListener {

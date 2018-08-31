@@ -7,8 +7,9 @@ import android.widget.ImageView
 import com.lesincs.simpleread.base.LazyInitFragment
 import com.mars.user.R
 import com.mars.user.constant.INT_KEY
-import com.mars.user.ui.home.article.mvp.ArticleListContract
-import com.mars.user.ui.home.article.mvp.ArticleListPresenter
+import com.mars.user.ui.home.article.ArticleDetailActivity
+import com.mars.user.ui.home.article.articlelistmvp.ArticleListContract
+import com.mars.user.ui.home.article.articlelistmvp.ArticleListPresenter
 import com.mars.user.ui.main_frg.home.adapter.MeiWenRvAdapter
 import com.mars.user.ui.main_frg.home.bean.GetYmmxListResBean
 import com.mars.user.utils.glideLoad
@@ -78,18 +79,18 @@ class ArticleListFrg : LazyInitFragment(), ArticleListContract.View {
         if (!isInitData) {
             val mHeaderView = LayoutInflater.from(context).inflate(R.layout.meiwen_header_view, refreshLayout, false)
             articleImg = mHeaderView.findViewById(R.id.img_headerPic)
-            selfAdaptionImageView(context!!, 640, 542, articleImg!!)
+            selfAdaptionImageView(context!!, 650, 500, articleImg!!)
             meiWenRvAdapter.addHeaderView(mHeaderView)
         }
     }
 
     private fun initListener() {
         articleImg!!.setOnClickListener {
-            showCenterToast("点击了顶部图片")
+            ArticleDetailActivity.startSelf(context!!,meiWenRvAdapter.data[0].mid)
         }
 
         meiWenRvAdapter.setOnItemClickListener { _, _, position ->
-            showCenterToast(meiWenRvAdapter.data[position].mid.toString())
+            ArticleDetailActivity.startSelf(context!!,meiWenRvAdapter.data[position].mid)
         }
 
         refreshLayout.setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
@@ -100,7 +101,6 @@ class ArticleListFrg : LazyInitFragment(), ArticleListContract.View {
             override fun onRefresh(refreshLayout: RefreshLayout?) {
                 articlePresenter?.onRefresh()
             }
-
         })
     }
 

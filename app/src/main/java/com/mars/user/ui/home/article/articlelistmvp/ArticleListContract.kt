@@ -1,4 +1,4 @@
-package com.mars.user.ui.home.article.mvp
+package com.mars.user.ui.home.article.articlelistmvp
 
 import cn.nekocode.rxlifecycle.RxLifecycle
 import com.mars.user.base.view.BaseView

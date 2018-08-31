@@ -1,4 +1,4 @@
-package com.mars.user.ui.home.article.mvp
+package com.mars.user.ui.home.article.articlelistmvp
 
 import cn.nekocode.rxlifecycle.LifecycleEvent
 import cn.nekocode.rxlifecycle.RxLifecycle

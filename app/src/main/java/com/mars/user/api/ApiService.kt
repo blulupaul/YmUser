@@ -2,6 +2,7 @@ package com.mars.user.api
 
 import com.mars.user.bean.BaseIntResBean
 import com.mars.user.bean.BaseNomalResBean
+import com.mars.user.ui.home.article.bean.GetYmmxInfoResBean
 import com.mars.user.ui.home.ympackage.list.bean.GetPackageDetailResBean
 import com.mars.user.ui.home.ympackage.list.bean.GetPackageListNewGroupPariidResBean
 import com.mars.user.ui.home.ympackage.list.bean.GetPackageListNewGroupResBean
@@ -256,4 +257,24 @@ interface ApiService {
     @GET("Packgae/GetPackageDetail?")
     fun getPackageDetail(@Query("yid") yid: Int, @Query("userid") userid: Int): Observable<GetPackageDetailResBean>
 
+    /**
+     * GET MeiLShi/GetYmmxListinfo/{mxid}/{userid}
+     * 云猫美学详细
+     */
+    @GET("MeiLShi/GetYmmxListinfo/{mxid}/{userid}")
+    fun getYmmxListInfo(@Path("mxid") mxid: Int, @Path("userid") userid: Int): Observable<GetYmmxInfoResBean>
+
+    /**
+     * GET MeiLShi/AddSCMyMw/{userid}/{mid}
+     * 收藏美文
+     */
+    @GET("MeiLShi/AddSCMyMw/{userid}/{mid}")
+    fun addScMyMw(@Path("userid") userid: Int, @Path("mid") mid: Int): Observable<BaseNomalResBean>
+
+    /**
+     * GET MeiLShi/CancelSCMyMw/{userid}/{mid}
+     * 取消收藏美文
+     */
+    @GET("MeiLShi/CancelSCMyMw/{userid}/{mid}")
+    fun cancelSCMyMw(@Path("userid") userid: Int, @Path("mid") mid: Int): Observable<BaseNomalResBean>
 }

@@ -61,6 +61,8 @@
         </activity>
         <activity android:name=".ui.home.article.ArticleActivity">
         </activity>
+        <activity android:name=".ui.home.article.ArticleDetailActivity">
+        </activity>
     </application>
 
 </manifest>
