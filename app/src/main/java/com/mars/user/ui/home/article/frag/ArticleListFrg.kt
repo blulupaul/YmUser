@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.frag_article_list.*
 
 /**
  * Created by gu on 2018/08/29
- * desc: ${desc}
+ * desc: 云猫美学列表Fragment
  */
 class ArticleListFrg : LazyInitFragment(), ArticleListContract.View {
     override fun onRefreshFinish() {

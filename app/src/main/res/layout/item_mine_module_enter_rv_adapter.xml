@@ -2,6 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+             android:paddingTop="5dp"
+             android:paddingBottom="5dp"
              android:background="?android:selectableItemBackground"
              android:orientation="vertical">
 
@@ -24,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/img_icon"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="19px"
             android:layout_marginTop="19px"
             android:text="云猫项目"
             android:textColor="#7a7979"

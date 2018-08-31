@@ -23,6 +23,10 @@ import com.mars.user.utils.SpUtil
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog
 import kotlinx.android.synthetic.main.activity_article_detail.*
 
+/**
+ * Created by gu on 2018/8/31
+ * Desc: 云猫美学详情页
+ */
 class ArticleDetailActivity : BaseActivity(), ArticleDetailContract.View {
     override fun onGetYmmxInfoSuccess(bean: GetYmmxInfoResBean) {
         //  是否收藏 0-代表未收藏，其他代表收藏
